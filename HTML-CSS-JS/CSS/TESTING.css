@@ -1,0 +1,384 @@
+/*HTML*/
+
+
+    html {
+        scroll-behavior: smooth; /*This ensures that the page scrolling is smooth when the buttons on the nav bar is clicked */
+    }
+
+/*IMPORT FONTS*/
+@font-face {
+    font-family: 'Dearth';
+    src: url(../Media-Files/Fonts/DearthDanceDemoRegular.ttf);
+    font-style: cursive;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Candara';
+    src: url(../Media-Files/Fonts/Candara_Bold.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+/*NAVIGATION BAR*/
+
+    .NAVBAR {
+        overflow: hidden; /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
+        background-color:  #fbf2c4; /* This colors the navbar black */
+        position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
+        top: 0; /* This ensures no space is displayed above the navbar */
+        width: 100%; /* This makes the navbar span the entire width of the page */
+        z-index: 1; /* This ensures other elements don't display over the navbar */
+    }
+
+
+    /* Screens 576px and smaller will display navbar links equally distributed */
+    @media screen and (max-width: 576px) {
+        .NAVBAR a{
+            width: 25%; /* This makes each link take up 1/4 of the navbar */
+            font-size: 12px;
+        }
+    }
+
+    /* Navbar links/anchors */
+    .NAVBAR a {
+        float: left; /* This specifies that the text floats on the left on the navbar */
+        display: block; /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+        color: #371800; /* This is the font color for text on our navbar */
+        padding: 14px 16px; /* This adds padding around our text */
+        text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+        font-family: 'Candara';
+        font-size: 18px; /* This specifies the font size for text on our navbar */
+        text-align: center; /* This centers the text within its container */
+        position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+    }
+
+    /* Navbar hover effects */
+    .NAVBAR a:hover {
+        color: #c7522a; /* This defines the font color that will display when navbar a elements are hovered over */
+        cursor: pointer;
+    }
+
+    /* Right-aligned section inside the top navigation */
+    .NAVBAR-RIGHT {
+        float: right;
+        display: block; /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+        padding: 5px 16px; /* This adds padding around our text */
+        text-align: center; /* This centers the text within its container */
+        position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+
+    }
+
+
+
+/*BODY*/
+
+    body {
+        margin: 10% 0% 0% 0%; /* This ensures our site displays all the way to the edge of the browser screen */
+        background-image: url(../Media-Files/images/hikers2.png);
+
+    }
+
+
+    .header {
+        font-family: 'Dearth';
+        font-size: 50px;
+        color: #371800;
+        padding: 2%;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+/*    .card-header {
+        font-family: 'Dearth';
+        font-size: 30px;
+        color: #fbf2c4;
+        padding: 2%;
+        text-align: center;
+    }
+*/
+
+
+    p { /*body text*/
+        font-family: 'Candara';
+        text-align: center; /* Justify text within paragraph elements */
+        /*? letter-spacing: 1px; */
+        letter-spacing: .1vw; /* This expands the text slightly */
+        /*? font-size: 30px;
+        padding-left: 20px; /* Adds padding to the left of the paragraph element 
+        padding-right: 20px; /* Adds padding to the right of the paragraph element */
+        font-size: 22px; /* Relative font sizing equal to 2.5% of the viewport width */
+        padding-left: 1vw; /* Relative padding equal to 1% of the viewport width */
+        padding-right: 1vw; /* Relative padding equal to 1% of the viewport width */
+    }
+
+
+/*IMAGES*/
+
+    /*this causes the image within a container to resize to size of the container*/
+    /*I am using this for the logo at top*/
+    .container { /*change to reference "container"?*/
+        position:absolute;     
+        /*
+        width: 130%;
+        height: 300px;
+        width: 375px;
+        height: 400px;
+        align-items: center;
+        display: flex;
+        */
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ?????????
+    /* Screens 576px and smaller will display images equally distributed */
+    @media screen and (max-width: 576px) {
+        #Regular_Images{
+            width: 25%; /* This makes each link take up 1/4 of the window */
+            font-size: 12px;
+        }
+    }
+
+
+
+/*STYLING*/
+
+button {
+    background-color: #008585;
+    font-family: 'Candara';
+    font-size: 14pt;
+    color: #fbf2c4;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    background-color: #c7522a;
+    font-size: 14pt;
+    font-family: 'Candara';
+    color: #fbf2c4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*search bar*/
+.search {
+    color: #008585;
+    font-family: 'Candara';
+    font-size: 14pt;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: underline;
+    background-color: #fbf2c4;
+    padding: 5px;
+}
+
+/*changes searchbar wording to a different color*/
+::placeholder {
+    color: #008585;
+    opacity: 1; /* Firefox */
+  }
+
+/*changes searchbar wording to a different color*/
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #008585;
+   }
+
+
+
+
+
+/*TABLES -  this section covers the styling of the columns and rows within the table *****/
+    
+    * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+        box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+        margin: 0;
+        padding: 0%;
+    } 
+
+    .COL-LEFT {
+        float: left;
+        width: 35%; /* This ensures the column takes up half of the page width */
+        height: 350px; /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+        text-align: center;
+        padding-left: 50px;
+        /*
+        padding-top: 2%; This ensures there is space between the top of the column and our headings
+        margin-top: 3%;
+        gap: 0%;
+        border-radius: 10px 50px;
+        */
+    }
+
+    .COL-RIGHT {
+        float:right;
+        /*border-radius: 10px 50px;*/
+        width: 65%; /* This ensures the column takes up half of the page width */
+        padding-right: 150px;
+        /*padding-top: 2%; /* This ensures there is space between the top of the column and our headings
+        margin-top: 3%;
+        */
+        height: 350px; /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+        /*background-color: #B3FF00;*/
+        text-align: center;
+    }
+
+
+
+/*FOOTER*/
+
+    footer {
+        padding: 2%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
+        font-size: 10pt;
+        font-family: 'Candara';
+        color: #371800;
+    }
+
+
+
+/*-------------------------------------------------------------*/
+/* CARD Carousel styling */
+/*good video tutorial I used to create this: https://youtu.be/BKKcGb80MOs */
+.carousel{
+    display: flex;
+    width: 50px;
+    padding: 50px;
+    /*
+    background: #c7522a;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    height: 135vh;
+    align-content: center;
+    */
+}
+
+
+/*video (could be image too) inside card*/
+video {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;    
+    /*
+    border-radius: 50%;
+    border: 3px solid #008585;
+    object-fit: cover;    
+    */
+}
+
+/*effect card itself?*/
+.card {
+    position: relative; /*effect red pricing block underneath*/
+    /*
+    width: 350px;
+    border-radius: 20px 20px 0px 0px;
+    margin: 20px 0px;    
+    height: 170%;    
+    */
+}
+
+/*pricing info at bottom (layered ontop) of card info*/
+.card::after { /*refers to adding this info AFTER the card content*/
+    content: "Activity Level: 2  |  Prices from $500";
+    position: absolute;
+    height: 20px;
+    width: 275px;
+    background: #c7522a;
+    color: #fbf2c4;
+    font-family: 'Candara';
+    font-size: 11pt;
+    border-radius: 0px 0px 12px 12px;
+    padding: 12px 12px 12px 12px;
+    text-align: center;
+}
+
+/*all content inside the card*/
+.card-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+}
+
+
+/*effects hike name inside card*/
+.hike {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Dearth';
+    font-size: 30px;
+    color: #fbf2c4;
+    padding: 2%;
+    text-align: right;
+    transition: all 0.3 ease;
+    width: 160px;
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-top: 10px;
+
+    */
+}
+
+.button {
+    position: absolute; /*this keeps the button ontop of the video*/
+    top: 108px;
+    right: 10px;
+    padding: 2%;
+    text-align: right;
+    justify-content: space-around;
+    /*
+    transition: all 0.3 ease;
+    */
+}
+
+/*effects hike pricing inside card*/
+.pricing {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*effects slider itself*/
+/*good tutorial for this here: https://swiperjs.com/demos#infinite-loop */
+.swiper {
+    width: 950px;
+}
+
+/*effects selectors at bottom of carousel
+.swiper-pagination {
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    background: #371800;
+}
+*/
+
+.mySwiper {
+    height: 250px;
+    top: 480px;
+    left: 200px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    opacity: 0.7;
+    color: #008585;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    opacity: 1;
+    color: #c7522a
+}
